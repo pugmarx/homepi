@@ -20,9 +20,9 @@ from stravalib import Client
 from stravalib import unithelper
 from datetime import datetime, timedelta
 
-# Client ID: 10784
-# Client Secret:        816fa1e5705955d43f044687aee60fbba8cc24ec
-# Your Access Token:    0c293900673bf7ccf80180dfd3553a54fb8d9542
+# Client ID: 10##4
+# Client Secret:        816fa1e5705955d43f044687aee60fbba8#####
+# Your Access Token:    0c293900673bf7ccf80180dfd3553a54fb#####
 
 ctd = 0
 ctc = 0
@@ -38,7 +38,7 @@ def greet():
 def calculate_stats():
 	global ctd, ctc, rtd, rtc, prbc, prbr, athlete, weekstart
 	
-	NAQ_ACCESS_TOKEN = '0c293900673bf7ccf80180dfd3553a54fb8d9542'
+	NAQ_ACCESS_TOKEN = '0c293900673bf7ccf80180dfd3553a54fb#####'
 	client = Client(access_token=NAQ_ACCESS_TOKEN)
 	athlete = client.get_athlete() # Get John's full athlete record
 
