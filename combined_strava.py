@@ -35,7 +35,7 @@ def greet():
 def calculate_stats():
 	global ctd, ctc, rtd, rtc, prbc, prbr, athlete, weekstart
 	
-	NAQ_ACCESS_TOKEN = 'xxxxxxxxccf80180dfd3553a54fb8d9542'
+	NAQ_ACCESS_TOKEN = '900673bf7ccf80180dfd3553a54fb#####'
 	client = Client(access_token=NAQ_ACCESS_TOKEN)
 	athlete = client.get_athlete() # Get John's full athlete record
 
