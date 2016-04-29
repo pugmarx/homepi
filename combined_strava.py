@@ -11,6 +11,7 @@ import sys
 if os.name != 'posix':
     sys.exit('platform not supported')
 import psutil
+import logging
 
 from datetime import datetime
 from oled.device import ssd1306, sh1106
@@ -19,10 +20,6 @@ from PIL import ImageDraw, ImageFont
 from stravalib import Client
 from stravalib import unithelper
 from datetime import datetime, timedelta
-
-# Client ID: 10784
-# Client Secret:        816fa1e5705955d43f044687aee60fbba8cc24ec
-# Your Access Token:    0c293900673bf7ccf80180dfd3553a54fb8d9542
 
 ctd = 0
 ctc = 0
@@ -38,7 +35,7 @@ def greet():
 def calculate_stats():
 	global ctd, ctc, rtd, rtc, prbc, prbr, athlete, weekstart
 	
-	NAQ_ACCESS_TOKEN = '0c293900673bf7ccf80180dfd3553a54fb8d9542'
+	NAQ_ACCESS_TOKEN = 'xxxxxxxxccf80180dfd3553a54fb8d9542'
 	client = Client(access_token=NAQ_ACCESS_TOKEN)
 	athlete = client.get_athlete() # Get John's full athlete record
 
@@ -99,7 +96,11 @@ def stats(oled):
 		draw.text((0, 48), strava(), font=font2, fill=255)
 		#time.sleep(1)
 
+#def graph(oled):
+	
+
 def main():
+	logging.basicConfig()
 	calculate_stats()
 	oled = ssd1306(port=1, address=0x3C)
 	stats(oled)
